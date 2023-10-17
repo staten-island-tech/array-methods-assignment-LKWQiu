@@ -36,3 +36,4 @@ Evocards.forEach((Evocards) => {
         console.log(Buffs);
     });
 });
+var filtered = Evocards.filter(Buffs => Buffs.includes('25% attack speed increase'))
