@@ -26,7 +26,9 @@ const Evocards = [
         Targets: "Ground",
         Buffs: ['Multiplying mechanic', 'Spawn count increased by 1'],
     }
-]
+];
+
+
 Evocards.forEach((Evocards) => {
     console.log(Evocards.name)
     console.log(Evocards.Hp)
@@ -36,11 +38,14 @@ Evocards.forEach((Evocards) => {
         console.log(Buffs);
     });
 });
-const filtered = Evocards.keys(Evocards)
-    .filter((key) => key.includes("25% attack speed increase"))
-    .reduce((Buffs, key) => {
-        return Buffs.assign(Buffs,{
-            [key]:Evocards[key]
-        });
+const filtered = Evocards.filter((cards) => cards.Buffs.includes('25% attack speed increase'));
+filtered.forEach((cards) => {
+    console.log(cards.name)
+    console.log(cards.Hp)
+    console.log(cards.Dps)
+    console.log(cards.Targets)
+    cards.Buffs.forEach((Buffs) => {
+        console.log(Buffs);
     });
-console.log(filtered)
+});
+console.log(filtered);
