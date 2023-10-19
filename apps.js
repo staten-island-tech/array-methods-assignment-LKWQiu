@@ -36,4 +36,11 @@ Evocards.forEach((Evocards) => {
         console.log(Buffs);
     });
 });
-var filtered = Evocards.filter(Buffs => Buffs.includes('25% attack speed increase'))
+const filtered = Evocards.keys(Evocards)
+    .filter((key) => key.includes("25% attack speed increase"))
+    .reduce((Buffs, key) => {
+        return Buffs.assign(Buffs,{
+            [key]:Evocards[key]
+        });
+    });
+console.log(filtered)
